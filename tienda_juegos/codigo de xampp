@@ -20,7 +20,7 @@ CREATE TABLE usuarios (
 
 -- Datos de prueba para el administrador
 -- usuario: 'admin', email: 'admin@tienda.com', clave: '1234' (MD5)
-INSERT INTO usuarios (usuario, email, clave) VALUES ('admin', 'admin@tienda.com', MD5('1234'));
+INSERT INTO usuarios (usuario, email, clave) VALUES ('Anthony', 'anthony@tienda.com', MD5('0997.Pecas'));
 
 -- Datos de prueba para productos
 INSERT INTO productos (nombre, precio, categoria, stock) VALUES
