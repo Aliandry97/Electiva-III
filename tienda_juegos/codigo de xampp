@@ -1,0 +1,30 @@
+CREATE DATABASE tienda_juegos;
+USE tienda_juegos;
+
+-- TABLA PRODUCTOS
+CREATE TABLE productos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL,
+  precio DECIMAL(10,2) NOT NULL,
+  categoria VARCHAR(50) NOT NULL,
+  stock INT NOT NULL
+);
+
+-- TABLA USUARIOS (Incluye email y UNICO)
+CREATE TABLE usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  usuario VARCHAR(50) NOT NULL UNIQUE,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  clave VARCHAR(255) NOT NULL
+);
+
+-- Datos de prueba para el administrador
+-- usuario: 'admin', email: 'admin@tienda.com', clave: '1234' (MD5)
+INSERT INTO usuarios (usuario, email, clave) VALUES ('admin', 'admin@tienda.com', MD5('1234'));
+
+-- Datos de prueba para productos
+INSERT INTO productos (nombre, precio, categoria, stock) VALUES
+('Call of duty', 12.50, 'Shooter', 15),
+('Zelda', 20.00, 'Aventura', 8),
+('Mario Bros', 35.75, 'Plataformas', 5),
+('Resident evil', 10.00, 'Survival Horror', 12);
